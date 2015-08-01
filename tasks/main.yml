@@ -6,6 +6,10 @@
     id=ACCC4CF8
     state=present
 
+- name: add postgres apt repository
+  sudo: yes
+  apt_repository: repo="deb http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main"
+
 - name: install postgres
   sudo: yes
   action: apt name={{item}} update_cache=yes
