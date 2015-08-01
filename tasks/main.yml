@@ -8,7 +8,7 @@
 
 - name: install postgres
   sudo: yes
-  action: apt name={{item}}
+  action: apt name={{item}} update_cache=yes
   with_items:
     - postgresql-{{postgres_version}}
     - libpq-dev
